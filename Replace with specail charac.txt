@@ -1,0 +1,8 @@
+$items=Get-ChildItem -Path "{3A63D646-2E39-4080-9F40-66EBEA93365C}"
+if($item in $items)
+{
+    $newName= $item.Name.replace('@','').Replace('"','').replace
+    $item.Editing.BeginEdit()
+    $item.Name=$newName
+    $item.Editing.EndEdit()
+}
