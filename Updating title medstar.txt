@@ -1,0 +1,14 @@
+$items = Get-ChildItem -Path "/sitecore/content/MHO/Medstar/Home/News and Publications/Articles and Research Reports"
+$string = " | MedStar Health"
+Foreach($item in $items)
+{
+    $title= $item.Fields["Title"].Value
+    if($title)
+    {
+      $newtitle = $title + $string
+      $item.Editing.BeginEdit()
+                                    $item.Fields["Title"].Value=$newtitle
+                                    $item.Editing.EndEdit()
+      write-host $newtitle
+    }
+}
