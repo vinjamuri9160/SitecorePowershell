@@ -1,4 +1,0 @@
-foreach($item in Get-ChildItem -Path "/sitecore/content/mho/medstar/home/education/graduate medical education graduates/"  -Recurse | Where-Object { $_.summary -eq ""})
-{
-$item.Displayname
-}
