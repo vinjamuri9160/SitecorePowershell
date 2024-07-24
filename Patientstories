@@ -1,6 +1,6 @@
-$csv = Import-CSV "C:\Medstar\Migration\Patient-Stories\Patient-Stories-medstarwashington.csv" -delimiter ","
+$csv = Import-CSV "C:\Migration\Patient-Stories\Patient-Stories.csv" -delimiter ","
 
-$CatCollPath = "/sitecore/content/MHO/Medstar/Data/Tags/"
+$CatCollPath = "/sitecore/content/kk/ll/Data/Tags/"
 $Catitem = Get-ChildItem -Path $CatCollPath -Recurse
 
 $catName =@{}
@@ -95,7 +95,7 @@ Function HandleImageField{
 		Logger("Started Processing for the field=>:"+$fieldName)
 		
 		$imageTempDirectory = "C:\Import\"
-		$imageSitecoreLocation = "/sitecore/media library/Project/MHO/Medstar/PatientStories/"
+		$imageSitecoreLocation = "/sitecore/media library/Project/kk/ll/PatientStories/"
 		
 		$fileName = (Split-Path -Path $imageUrl -Leaf).Split(".")[0];
 		$extension = (Split-Path -Path $imageUrl -Leaf).Split(".")[1];
@@ -376,7 +376,7 @@ param(
 		[String]$Catvalues
     )
 	
-	    $CatCollPath = "/sitecore/content/MHO/Medstar/Data/Tags/Categories/"
+	    $CatCollPath = "/sitecore/content/kk/ll/Data/Tags/Categories/"
 		$CatTemplatePath = "/sitecore/templates/Foundation/Experience Accelerator/Taxonomy/Datasource/Tag"
 
        $NestedCategory = $Catvalues.Split(">")
@@ -525,7 +525,7 @@ Function HandleAuthorField{
 	{
 		Logger("Started Processing for the field=>:"+$fieldName)
 		
-		 $AuthorsCollPath = "/sitecore/content/MHO/Medstar/Data/Authors/"
+		 $AuthorsCollPath = "/sitecore/content/kk/ll/Data/Authors/"
 		 $AuthorsTemplatePath = "/sitecore/templates/Feature/Experience Accelerator/Page Content/Text"
 		
 		  $AuthorItemPath = $AuthorsCollPath + $fieldValue
