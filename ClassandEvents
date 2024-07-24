@@ -1,4 +1,4 @@
-$csv = Import-CSV "C:\Medstar\Migration\ClassEvent\classandevents_medstarhealth_1.csv" -delimiter ","
+$csv = Import-CSV "C:\Medstar\Migration\ClassEvent\kkkkk.csv" -delimiter ","
 
 $CatCollPath = "/sitecore/content/MHO/Medstar/Data/Tags/"
 $Catitem = Get-ChildItem -Path $CatCollPath -Recurse
@@ -20,7 +20,7 @@ foreach($itemRendering in $Catitem ) {
 			
 			
 			$itemPath = "/sitecore/content/MHO/Medstar/Home/Classes and Events/" + ($row.'Title' -replace "[!,:,',&,;,?]")
-			$itemTemplate = "/sitecore/templates/Project/MHO/MedStar/Classes and Events/ClassandEvents"		
+			$itemTemplate = "/sitecore/templates/Project/MHO/kk/Classes and Events/ClassandEvents"		
 			
 			$item = Get-Item -Path $itemPath -ErrorAction SilentlyContinue
 				
@@ -99,7 +99,7 @@ Function HandleImageField{
 		Logger("Started Processing for the field=>:"+$fieldName)
 		
 		$imageTempDirectory = "C:\Import\"
-		$imageSitecoreLocation = "/sitecore/media library/Project/MHO/Medstar/ClassandEvents/"
+		$imageSitecoreLocation = "/sitecore/media library/Project/MHO/ll/ClassandEvents/"
 		
 		$fileName = (Split-Path -Path $imageUrl -Leaf).Split(".")[0];
 		$extension = (Split-Path -Path $imageUrl -Leaf).Split(".")[1];
@@ -488,7 +488,7 @@ Function HandleTagsField{
 	{
 		Logger("Started Processing for the field=>:"+$fieldName)
 		
-		 $TagCollPath = "/sitecore/content/MHO/Medstar/Data/Tags/ClassandEvents/"
+		 $TagCollPath = "/sitecore/content/ll/kkk/Data/Tags/ClassandEvents/"
 		 $TagTemplatePath = "/sitecore/templates/Foundation/Experience Accelerator/Taxonomy/Datasource/Tag"
 		
 		$Tagvalues = $fieldValue.Split("|")
@@ -551,7 +551,7 @@ Function HandleAuthorField{
 	{
 		Logger("Started Processing for the field=>:"+$fieldName)
 		
-		 $AuthorsCollPath = "/sitecore/content/MHO/Medstar/Data/Authors/"
+		 $AuthorsCollPath = "/sitecore/content/MHO/k/Data/Authors/"
 		 $AuthorsTemplatePath = "/sitecore/templates/Feature/Experience Accelerator/Page Content/Text"
 		
 		  $AuthorItemPath = $AuthorsCollPath + $fieldValue
