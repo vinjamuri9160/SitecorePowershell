@@ -1,4 +1,4 @@
-$items = Get-ChildItem -Path "/sitecore/content/MHO/Medstar/Home/Blog/Author Profile"
+$items = Get-ChildItem -Path "path"
 $parameters = [ordered]@{"Styles"="{28BB9E62-3406-457E-9CEA-810A9A6F6EC5}|{93CD8D7D-4B25-46F4-9AFC-C7730433DAA8}"}
 $rendering= Get-Item -Path "/sitecore/layout/Renderings/Feature/Experience Accelerator/Search/Search Results"
 foreach($item in $items)
