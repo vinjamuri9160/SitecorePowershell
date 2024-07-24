@@ -1,4 +1,4 @@
-foreach($item in Get-ChildItem -Path "/sitecore/content/MHO/Medstar/Home/Innovation and Research/Medstar Health Research Institute/Principal Investigators")
+foreach($item in Get-ChildItem -Path "/sitecore/content/ll/kk/Home/Innovation and Research/Health Research Institute/Principal Investigators")
 {
 
  
